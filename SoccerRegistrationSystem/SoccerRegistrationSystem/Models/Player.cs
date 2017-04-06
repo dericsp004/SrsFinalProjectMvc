@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 namespace SoccerRegistrationSystem.Models
 {
-    public enum Position
+    public enum Elementary
     {
-        NoPreference, Forward, Midfield, Defense, GoalKeeper
+        Adams, Burton, Hibbard, Kennedy, Lincoln, Sugar
     }
 
     public class Player : Person
     {
         public int YearsExperience { get; set; }
-        public Position? PreferredPosition { get; set; }
+        public Elementary? ElementarySchool { get; set; }
+
         [Required]
-        [StringLength (100, ErrorMessage ="Guardian Name Length cannot be longer than 100 characters")]
-        [Display(Name = "Parent/Guardian Name")]
+        [StringLength (50, ErrorMessage ="Guardian Name Length cannot be longer than 50 characters")]
+        [Display(Name = "Parent/Guardian Full Name")]
         public string GuardianName { get; set; }
 
     }

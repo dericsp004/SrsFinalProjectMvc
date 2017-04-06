@@ -4,12 +4,33 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Register a Player</h2>
 
 <form asp-action="Create">
     <div class="form-horizontal">
-        <h4>Player</h4>
+
         <hr />
+        <h4>Enter Player Information</h4>
+        <div class="form-group">
+            <label asp-for="FirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>        <div class="form-group">
+            <label asp-for="LastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BirthDay" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BirthDay" class="form-control" />
+                <span asp-validation-for="BirthDay" class="text-danger"></span>
+            </div>
+        </div>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="YearsExperience" class="col-md-2 control-label"></label>
@@ -18,13 +39,33 @@
                 <span asp-validation-for="YearsExperience" class="text-danger"></span>
             </div>
         </div>
+
         <div class="form-group">
-            <label asp-for="PreferredPosition" class="col-md-2 control-label"></label>
+            <label asp-for="ElementarySchool" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="PreferredPosition" class="form-control" />
-                <span asp-validation-for="PreferredPosition" class="text-danger"></span>
+                <input asp-for="ElementarySchool" class="form-control" />
+                <span asp-validation-for="ElementarySchool" class="text-danger"></span>
             </div>
         </div>
+
+        @*<div class="form-group">
+                <label asp-for="ElementarySchool" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <select asp-for="ElementarySchool" class="form-control" asp-items="ViewBag.ElementarySchool">
+                        <option value="">-- Select Elementary School --</option>
+                        <option value="Adams">Adams</option>
+                        <option value="Burton">Burton</option>
+                        <option value="Hibbard">Hibbard</option>
+                        <option value="Kennedy">Kennedy</option>
+                        <option value="Lincoln">Lincoln</option>
+                        <option value="Sugar">Sugar</option>
+                    </select>
+                    <span asp-validation-for="ElementarySchool" class="text-danger" />
+                </div>
+            </div>*@
+
+        <hr />
+        <h4>Enter Guardian Information</h4>
         <div class="form-group">
             <label asp-for="GuardianName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -32,27 +73,7 @@
                 <span asp-validation-for="GuardianName" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group">
-            <label asp-for="LastName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="FirstName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="MiddleName" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="MiddleName" class="form-control" />
-                <span asp-validation-for="MiddleName" class="text-danger"></span>
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -60,10 +81,6 @@
         </div>
     </div>
 </form>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
