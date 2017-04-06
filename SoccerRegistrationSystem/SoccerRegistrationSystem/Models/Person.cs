@@ -23,7 +23,6 @@ namespace SoccerRegistrationSystem.Models
         [StringLength(50, ErrorMessage = "Middle name cannot be longer than 50 characters.")]
         [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
-
-        public DateTime BirthDay; 
+        public DateTime BirthDay { get; set; } 
     }
 }
