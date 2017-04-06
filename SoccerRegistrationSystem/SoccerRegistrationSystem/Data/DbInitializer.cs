@@ -6,13 +6,14 @@ using SoccerRegistrationSystem.Models;
 
 namespace SoccerRegistrationSystem.Data
 {
+    //note
     public class DbInitializer
     {
         public static void Initialize(LeagueContext context)
         {
             context.Database.EnsureCreated();
 
-            // Look for any students
+            // Look for any players
             if (context.Players.Any())
             {
                 return;   // DB has been seeded
@@ -20,10 +21,10 @@ namespace SoccerRegistrationSystem.Data
 
             var players = new Player[]
             {
-                new Player{LastName="Plummer", FirstName="Deric", MiddleName = "Scott", GuardianName = "Sandra Plummer", BirthDay=DateTime.Parse("2009-04-15"), YearsExperience = 2, PreferredPosition = Position.Forward},
-                new Player{LastName="McFarlane", FirstName="Andrew", MiddleName = "Foster", GuardianName = "Mary McFarlane", BirthDay=DateTime.Parse("2009-01-21"), YearsExperience = 1, PreferredPosition = Position.GoalKeeper},
-                new Player{LastName="Carson", FirstName="Alexander", GuardianName = "John Doe", BirthDay=DateTime.Parse("2011-09-01"), YearsExperience = 0, PreferredPosition = Position.NoPreference},
-                new Player{LastName="Simpson", FirstName="Jessica", MiddleName = "Marie", GuardianName = "Eric Simpson", BirthDay=DateTime.Parse("2011-07-06"), YearsExperience = 1, PreferredPosition = Position.Midfield}
+                new Player{LastName="Plummer", FirstName="Deric", MiddleName = "Scott", GuardianName = "Sandra Plummer", BirthDay=DateTime.Parse("2009-04-15"), YearsExperience = 2, ElementarySchool = Elementary.Lincoln},
+                new Player{LastName="McFarlane", FirstName="Andrew", MiddleName = "Foster", GuardianName = "Mary McFarlane", BirthDay=DateTime.Parse("2009-01-21"), YearsExperience = 1, ElementarySchool = Elementary.Adams},
+                new Player{LastName="Carson", FirstName="Alexander", GuardianName = "John Doe", BirthDay=DateTime.Parse("2011-09-01"), YearsExperience = 0, ElementarySchool = Elementary.Lincoln},
+                new Player{LastName="Simpson", FirstName="Jessica", MiddleName = "Marie", GuardianName = "Eric Simpson", BirthDay=DateTime.Parse("2011-07-06"), YearsExperience = 1, ElementarySchool = Elementary.Lincoln}
             };
             foreach (Player s in players)
             {
