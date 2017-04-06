@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SoccerRegistrationSystem.Models
 {
+
+    //This is the current push
     public abstract class Person
     {
         public int ID { get; set; }
