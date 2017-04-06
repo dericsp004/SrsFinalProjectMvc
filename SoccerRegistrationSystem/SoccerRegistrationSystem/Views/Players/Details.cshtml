@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Player Details</h2>
 
 <div>
     <h4>Player</h4>
@@ -17,10 +17,10 @@
             @Html.DisplayFor(model => model.YearsExperience)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PreferredPosition)
+            @Html.DisplayNameFor(model => model.ElementarySchool)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PreferredPosition)
+            @Html.DisplayFor(model => model.ElementarySchool)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.GuardianName)
@@ -46,6 +46,14 @@
         <dd>
             @Html.DisplayFor(model => model.MiddleName)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BirthDay)
+        </dd>
+
+
     </dl>
 </div>
 <div>

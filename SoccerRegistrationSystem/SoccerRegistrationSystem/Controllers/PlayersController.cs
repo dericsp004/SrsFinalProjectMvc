@@ -54,7 +54,7 @@ namespace SoccerRegistrationSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("YearsExperience,PreferredPosition,GuardianName,ID,LastName,FirstName,MiddleName")] Player player)
+        public async Task<IActionResult> Create([Bind("YearsExperience,ElementarySchool,GuardianName,ID,LastName,FirstName,MiddleName,BirthDay")] Player player)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace SoccerRegistrationSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("YearsExperience,PreferredPosition,GuardianName,ID,LastName,FirstName,MiddleName")] Player player)
+        public async Task<IActionResult> Edit(int id, [Bind("YearsExperience,ElementarySchool,GuardianName,ID,LastName,FirstName,MiddleName,BirthDay")] Player player)
         {
             if (id != player.ID)
             {
