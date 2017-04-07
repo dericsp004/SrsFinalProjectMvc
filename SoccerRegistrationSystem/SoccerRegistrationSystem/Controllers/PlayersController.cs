@@ -49,8 +49,9 @@ namespace SoccerRegistrationSystem.Controllers
             return View();
         }
 
-        // POST: Players/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+
+        //POST: Players/Create
+        //To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -60,10 +61,12 @@ namespace SoccerRegistrationSystem.Controllers
             {
                 _context.Add(player);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                //need to change RedirectToAction to "Confirm"
+                return View("Confirm");
             }
             return View(player);
         }
+
 
         // GET: Players/Edit/5
         public async Task<IActionResult> Edit(int? id)

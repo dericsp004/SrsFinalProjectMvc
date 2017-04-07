@@ -29,9 +29,6 @@
                     @Html.DisplayNameFor(model => model.FirstName)
                 </th>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.MiddleName)
-                </th>
 
         </thead>
         <tbody>
@@ -53,9 +50,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.FirstName)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MiddleName)
-                    </td>
+
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                         <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
@@ -65,3 +60,30 @@
             }
         </tbody>
     </table>
+
+
+@*@{
+    ViewData["Title"] = "Confirm";
+}
+
+<div class="item">
+    <h1>Registration Complete!</h1>
+
+    <h3>For Players, Parents and Volunteers</h3>
+    <h4>Please watch and learn about concussions!</h4>
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/esJmNK6Ekv4" frameborder="0" allowfullscreen></iframe>
+
+    <p />
+
+    <h3>Volunteers</h3>
+    <h4>Please watch and learn about our league rules and Referee expectations!</h4>
+    <p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8x6RcHEYiFQ" frameborder="0" allowfullscreen></iframe>
+
+    <p />
+    <p>
+        Contact us directly if you'd like to register your U-10 player with our league manager<br>
+        1-800-555-5555
+    <p />
+</div>*@
