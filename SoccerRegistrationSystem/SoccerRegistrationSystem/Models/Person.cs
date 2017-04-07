@@ -8,6 +8,7 @@ namespace SoccerRegistrationSystem.Models
 {
 
     //This is the current push
+
     public abstract class Person
     {
         public int ID { get; set; }
@@ -28,6 +29,15 @@ namespace SoccerRegistrationSystem.Models
 
         [Display(Name = "Date Of Birth")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime BirthDay { get; set; } 
+        [DataType(DataType.Date)]
+        public DateTime BirthDay { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
+        [Required]
+        public string Street { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Zipcode { get; set; }
     }
 }
