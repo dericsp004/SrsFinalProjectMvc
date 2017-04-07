@@ -55,7 +55,8 @@ namespace SoccerRegistrationSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("YearsExperience,ElementarySchool,GuardianName,ID,LastName,FirstName,MiddleName,BirthDay")] Player player)
+        public async Task<IActionResult> Create([Bind("YearsExperience,ElementarySchool,GuardianName,ID,LastName,FirstName,MiddleName,BirthDay," +
+                                                      "PhoneNumber,Street,City,Zipcode")] Player player)
         {
             if (ModelState.IsValid)
             {
@@ -81,6 +82,7 @@ namespace SoccerRegistrationSystem.Controllers
             {
                 return NotFound();
             }
+            
             return View(player);
         }
 

@@ -24,23 +24,39 @@ namespace SoccerRegistrationSystem.Data
                 new Player{LastName="Plummer", FirstName="Deric",
                     GuardianName = "Sandra Plummer",
                     BirthDay =DateTime.Parse("2009-04-15"), YearsExperience = 2,
-                    ElementarySchool = Elementary.Lincoln},
+                    ElementarySchool = Elementary.Lincoln,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"},
                 new Player{LastName="McFarlane", FirstName="Andrew",
                     GuardianName = "Mary McFarlane",
                     BirthDay =DateTime.Parse("2009-01-21"), YearsExperience = 1,
-                    ElementarySchool = Elementary.Adams},
+                    ElementarySchool = Elementary.Adams,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"},
                 new Player{LastName="Carson", FirstName="Alexander",
                     GuardianName = "John Doe",
                     BirthDay =DateTime.Parse("2011-09-01"), YearsExperience = 0,
-                    ElementarySchool = Elementary.Lincoln},
+                    ElementarySchool = Elementary.Lincoln,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"},
                 new Player{LastName="Simpson", FirstName="Jessica",
                     GuardianName = "Eric Simpson",
                     BirthDay =DateTime.Parse("2011-07-06"), YearsExperience = 1,
-                    ElementarySchool = Elementary.Lincoln}
+                    ElementarySchool = Elementary.Lincoln,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"}
             };
-            foreach (Player s in players)
+            foreach (Player p in players)
             {
-                context.Players.Add(s);
+                context.Players.Add(p);
             }
             context.SaveChanges();
 
@@ -49,34 +65,27 @@ namespace SoccerRegistrationSystem.Data
                 new Volunteer{LastName="Plummer",FirstName="Sandra", MiddleName = "Lea",
                     BirthDay =DateTime.Parse("1954-06-15"), YearsExperience = 2,
                     Position = VolunteerPosition.Other,
-                    SubmitBackGroundCheck = true},
+                    SubmitBackGroundCheck = true,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"},
                 new Volunteer{LastName="Wenger",FirstName="Arsene",
                     BirthDay =DateTime.Parse("1950-12-08"), YearsExperience = 30,
                     Position = VolunteerPosition.Coach,
-                    SubmitBackGroundCheck = true}
+                    SubmitBackGroundCheck = true,
+                    PhoneNumber = "951-515-2660",
+                    Street = "123 1st East",
+                    City = "Rexburg",
+                    Zipcode = "83440"}
             };
 
             foreach (Volunteer v in volunteers)
             {
                 context.Volunteers.Add(v);
             }
-
-
-            var contactInfo = new Contact[]
-            {
-                new Contact{PersonId = 1, address = "1926 S Starfire Ave, Rexburg, ID 83440", PhoneNumber = "951-515-2660"},
-                new Contact{PersonId = 2, address = "1111 2nd St, Rexburg, ID 83440", PhoneNumber="111-222-3333"},
-                new Contact{PersonId = 3, address = "123 1st East, Rexburg, ID 83440", PhoneNumber="111-123-4567"},
-                new Contact{PersonId = 4, address = "1926 S Starfire Ave, Rexburg, ID 83440", PhoneNumber = "951-515-2660"},
-                new Contact{PersonId = 5, address = "1926 S Starfire Ave, Rexburg, ID 83440", PhoneNumber = "951-515-2660"},
-                new Contact{PersonId = 6, address = "1926 S Starfire Ave, Rexburg, ID 83440", PhoneNumber = "951-515-2660"}
-            };
-            foreach (Contact c in contactInfo)
-            {
-                context.Contacts.Add(c);
-            }
-
             context.SaveChanges();
+
         }
     }
 }

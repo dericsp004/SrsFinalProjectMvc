@@ -6,36 +6,38 @@ using System.Threading.Tasks;
 
 namespace SoccerRegistrationSystem.Models
 {
+
+    //This is the current push
+
     public abstract class Person
     {
         public int ID { get; set; }
 
+        [Required]
+        [StringLength(50, ErrorMessage = "Last name cannot be longer than 50 characters.")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
-        [Display(Name = "Player First Name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [StringLength(50, ErrorMessage = "Middle name cannot be longer than 50 characters.")]
-        [Display(Name = "Player Middle Name")]
+        [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
+        [Display(Name = "Date Of Birth")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public DateTime BirthDay { get; set; }
         [Required]
-        [StringLength(50, ErrorMessage = "Last name cannot be longer than 50 characters.")]
-        [Display(Name = "Player Last Name")]
-        public string LastName { get; set; }
-
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        //[Display(Name = "Birthday")]
-        public DateTime BirthDay; /*{ get; set; }*/
+        public string PhoneNumber { get; set; }
+        [Required]
+        public string Street { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Zipcode { get; set; }
     }
-    }
-
-//    NOTE: Example of how date entry is used in the Contoso project.
-
-//    [DataType(DataType.Date)]
-//    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-//    [Display(Name = "Hire Date")]
-//    public DateTime HireDate { get; set; }
-//}
+}

@@ -9,23 +9,37 @@ using SoccerRegistrationSystem.Models;
 namespace SoccerRegistrationSystem.Migrations
 {
     [DbContext(typeof(LeagueContext))]
-    partial class LeagueContextModelSnapshot : ModelSnapshot
+    [Migration("20170406220423_AddDate")]
+    partial class AddDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("SoccerRegistrationSystem.Models.Contact", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("PersonId");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("address");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Contacts");
+                });
 
             modelBuilder.Entity("SoccerRegistrationSystem.Models.Person", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("BirthDay");
-
-                    b.Property<string>("City")
-                        .IsRequired();
+                    b.Property<DateTime?>("BirthDay");
 
                     b.Property<string>("Discriminator")
                         .IsRequired();
@@ -40,15 +54,6 @@ namespace SoccerRegistrationSystem.Migrations
 
                     b.Property<string>("MiddleName")
                         .HasMaxLength(50);
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired();
-
-                    b.Property<string>("Street")
-                        .IsRequired();
-
-                    b.Property<string>("Zipcode")
-                        .IsRequired();
 
                     b.HasKey("ID");
 
