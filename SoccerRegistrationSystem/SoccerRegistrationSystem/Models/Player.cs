@@ -16,8 +16,8 @@ namespace SoccerRegistrationSystem.Models
     {
         public int YearsExperience { get; set; }
         public Elementary? ElementarySchool { get; set; }
-        [Key]
-        [ForeignKey("Team")]
+        //[Key]
+        //[ForeignKey("Team")]
         [Required]
         [StringLength (50, ErrorMessage ="Guardian Name Length cannot be longer than 50 characters")]
         [Display(Name = "Parent/Guardian Full Name")]
