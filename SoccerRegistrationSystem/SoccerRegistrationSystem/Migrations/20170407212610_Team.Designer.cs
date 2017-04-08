@@ -9,9 +9,10 @@ using SoccerRegistrationSystem.Models;
 namespace SoccerRegistrationSystem.Migrations
 {
     [DbContext(typeof(LeagueContext))]
-    partial class LeagueContextModelSnapshot : ModelSnapshot
+    [Migration("20170407212610_Team")]
+    partial class Team
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -42,9 +43,6 @@ namespace SoccerRegistrationSystem.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired();
-
-                    b.Property<string>("State")
                         .IsRequired();
 
                     b.Property<string>("Street")
