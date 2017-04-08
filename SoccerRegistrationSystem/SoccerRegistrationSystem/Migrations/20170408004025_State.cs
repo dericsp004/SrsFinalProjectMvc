@@ -4,25 +4,22 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SoccerRegistrationSystem.Migrations
 {
-    public partial class DateMod : Migration
+    public partial class State : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<DateTime>(
-                name: "BirthDay",
+            migrationBuilder.AddColumn<string>(
+                name: "State",
                 table: "Persons",
                 nullable: false,
-                oldClrType: typeof(DateTime),
-                oldNullable: true);
+                defaultValue: "");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<DateTime>(
-                name: "BirthDay",
-                table: "Persons",
-                nullable: true,
-                oldClrType: typeof(DateTime));
+            migrationBuilder.DropColumn(
+                name: "State",
+                table: "Persons");
         }
     }
 }

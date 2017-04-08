@@ -44,6 +44,9 @@ namespace SoccerRegistrationSystem.Migrations
                     b.Property<string>("PhoneNumber")
                         .IsRequired();
 
+                    b.Property<string>("State")
+                        .IsRequired();
+
                     b.Property<string>("Street")
                         .IsRequired();
 

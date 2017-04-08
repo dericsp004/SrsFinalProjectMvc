@@ -5,25 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SoccerRegistrationSystem.Migrations
 {
-    public partial class AddDate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Contacts",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    PersonId = table.Column<int>(nullable: false),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    address = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Contacts", x => x.ID);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
@@ -43,11 +28,15 @@ namespace SoccerRegistrationSystem.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BirthDay = table.Column<DateTime>(nullable: true),
+                    BirthDay = table.Column<DateTime>(nullable: false),
+                    City = table.Column<string>(nullable: false),
                     Discriminator = table.Column<string>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 50, nullable: false),
                     LastName = table.Column<string>(maxLength: 50, nullable: false),
                     MiddleName = table.Column<string>(maxLength: 50, nullable: true),
+                    PhoneNumber = table.Column<string>(nullable: false),
+                    Street = table.Column<string>(nullable: false),
+                    Zipcode = table.Column<string>(nullable: false),
                     ElementarySchool = table.Column<int>(nullable: true),
                     GuardianName = table.Column<string>(maxLength: 50, nullable: true),
                     TeamID = table.Column<int>(nullable: true),
@@ -74,9 +63,6 @@ namespace SoccerRegistrationSystem.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Contacts");
-
             migrationBuilder.DropTable(
                 name: "Persons");
 

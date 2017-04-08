@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace SoccerRegistrationSystem.Models
 {
 
-    //This is the current push
-
     public abstract class Person
     {
         public int ID { get; set; }
@@ -31,13 +29,25 @@ namespace SoccerRegistrationSystem.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime BirthDay { get; set; }
-        [Required]
+
+        [StringLength(15, ErrorMessage = "Phone Number cannot be longer than 15 characters.")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
-        [Required]
+
+        [StringLength(30, ErrorMessage = "Street cannot be longer than 30 characters.")]
+        [Display(Name = "Street")]
         public string Street { get; set; }
-        [Required]
+
+        [StringLength(30, ErrorMessage = "City cannot be longer than 30 characters.")]
+        [Display(Name = "City")]
         public string City { get; set; }
-        [Required]
+
+        [StringLength(30, ErrorMessage = "State cannot be longer than 30 characters.")]
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [StringLength(5, ErrorMessage = "Zip code cannot be longer than 5 characters.")]
+        [Display(Name = "Zip Code")]
         public string Zipcode { get; set; }
     }
 }

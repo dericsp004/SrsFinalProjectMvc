@@ -54,13 +54,14 @@ namespace SoccerRegistrationSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SubmitBackGroundCheck,Position,YearsExperience,ID,LastName,FirstName,MiddleName")] Volunteer volunteer)
+        public async Task<IActionResult> Create([Bind("SubmitBackGroundCheck,Position,YearsExperience,ID,LastName,FirstName,MiddleName,Birthday," +
+                                                        "PhoneNumber,Street,City,State,Zipcode")] Volunteer volunteer)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(volunteer);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return View("Confirm");
             }
             return View(volunteer);
         }
@@ -86,7 +87,8 @@ namespace SoccerRegistrationSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SubmitBackGroundCheck,Position,YearsExperience,ID,LastName,FirstName,MiddleName")] Volunteer volunteer)
+        public async Task<IActionResult> Edit(int id, [Bind("SubmitBackGroundCheck,Position,YearsExperience,ID,LastName,FirstName,MiddleName,Birthday," +
+                                                        "PhoneNumber,Street,City,State,Zipcode")] Volunteer volunteer)
         {
             if (id != volunteer.ID)
             {

@@ -9,8 +9,8 @@ using SoccerRegistrationSystem.Models;
 namespace SoccerRegistrationSystem.Migrations
 {
     [DbContext(typeof(LeagueContext))]
-    [Migration("20170407170933_DropContact")]
-    partial class DropContact
+    [Migration("20170408013006_City")]
+    partial class City
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,9 @@ namespace SoccerRegistrationSystem.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired();
+
+                    b.Property<string>("State")
                         .IsRequired();
 
                     b.Property<string>("Street")

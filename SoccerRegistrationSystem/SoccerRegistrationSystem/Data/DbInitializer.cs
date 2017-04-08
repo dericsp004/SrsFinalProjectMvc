@@ -28,6 +28,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"},
                 new Player{LastName="McFarlane", FirstName="Andrew",
                     GuardianName = "Mary McFarlane",
@@ -36,6 +37,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"},
                 new Player{LastName="Carson", FirstName="Alexander",
                     GuardianName = "John Doe",
@@ -44,6 +46,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"},
                 new Player{LastName="Simpson", FirstName="Jessica",
                     GuardianName = "Eric Simpson",
@@ -52,6 +55,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"}
             };
             foreach (Player p in players)
@@ -69,6 +73,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"},
                 new Volunteer{LastName="Wenger",FirstName="Arsene",
                     BirthDay =DateTime.Parse("1950-12-08"), YearsExperience = 30,
@@ -77,6 +82,7 @@ namespace SoccerRegistrationSystem.Data
                     PhoneNumber = "951-515-2660",
                     Street = "123 1st East",
                     City = "Rexburg",
+                    State = "Idaho",
                     Zipcode = "83440"}
             };
 

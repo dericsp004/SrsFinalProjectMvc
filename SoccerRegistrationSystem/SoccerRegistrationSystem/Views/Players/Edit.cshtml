@@ -8,7 +8,7 @@
         <h4>Player</h4>
 
         <hr />
-        <h4>Enter Player Information</h4>
+        <h4>Player Information</h4>
         <div class="form-group">
             <label asp-for="FirstName" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -37,53 +37,125 @@
                 <span asp-validation-for="YearsExperience" class="text-danger"></span>
             </div>
         </div>
+
         <div class="form-group">
             <label asp-for="ElementarySchool" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="ElementarySchool" class="form-control" />
-                <span asp-validation-for="ElementarySchool" class="text-danger"></span>
+                <select asp-for="ElementarySchool" class="form-control" asp-items="ViewBag.ElementarySchool">
+                    <option value="">-- Select Elementary School --</option>
+                    <option value="Adams">Adams</option>
+                    <option value="Burton">Burton</option>
+                    <option value="Hibbard">Hibbard</option>
+                    <option value="Kennedy">Kennedy</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Sugar">Sugar</option>
+                </select>
+                <span asp-validation-for="ElementarySchool" class="text-danger" />
             </div>
         </div>
 
-            @*<div class="form-group">
-                <label asp-for="ElementarySchool" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <select asp-for="ElementarySchool" class="form-control" asp-items="ViewBag.ElementarySchool">
-                        <option value="">-- Select Elementary School --</option>
-                        <option value="Adams">Adams</option>
-                        <option value="Burton">Burton</option>
-                        <option value="Hibbard">Hibbard</option>
-                        <option value="Kennedy">Kennedy</option>
-                        <option value="Lincoln">Lincoln</option>
-                        <option value="Sugar">Sugar</option>
-                    </select>
-                    <span asp-validation-for="ElementarySchool" class="text-danger" />
-                </div>
-            </div>*@
-
-            <hr />
-            <h4>Enter Guardian Information</h4>
-            <div class="form-group">
-                <label asp-for="GuardianName" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="GuardianName" class="form-control" />
-                    <span asp-validation-for="GuardianName" class="text-danger"></span>
-                </div>
+        <hr />
+        <h4>Guardian Information</h4>
+        <div class="form-group">
+            <label asp-for="GuardianName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="GuardianName" class="form-control" />
+                <span asp-validation-for="GuardianName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ContactInfo.PhoneNumber" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="ContactInfo.PhoneNumber" class="form-control" />
-                    <span asp-validation-for="ContactInfo.PhoneNumber" class="text-danger" />
-                </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger" />
             </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Update" class="btn btn-default" />
-                </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Street" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="State" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="State" class="form-control" asp-items="ViewBag.Position">
+                    <option value="">-- Select State --</option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                </select>
+                <span asp-validation-for="State" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Zipcode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Zipcode" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger" />
             </div>
         </div>
 
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 </form>
 <div>
     <a asp-action="Index">Back to List</a>

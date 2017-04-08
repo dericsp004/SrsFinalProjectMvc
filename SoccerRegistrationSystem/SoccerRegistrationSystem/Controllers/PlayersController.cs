@@ -62,7 +62,6 @@ namespace SoccerRegistrationSystem.Controllers
             {
                 _context.Add(player);
                 await _context.SaveChangesAsync();
-                //need to change RedirectToAction to "Confirm"
                 return View("Confirm");
             }
             return View(player);

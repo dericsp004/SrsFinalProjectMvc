@@ -9,8 +9,8 @@ using SoccerRegistrationSystem.Models;
 namespace SoccerRegistrationSystem.Migrations
 {
     [DbContext(typeof(LeagueContext))]
-    [Migration("20170407024439_contactUpdate3")]
-    partial class contactUpdate3
+    [Migration("20170407234834_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,39 +18,15 @@ namespace SoccerRegistrationSystem.Migrations
                 .HasAnnotation("ProductVersion", "1.1.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SoccerRegistrationSystem.Models.Contact", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("City")
-                        .IsRequired();
-
-                    b.Property<int>("PersonId");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired();
-
-                    b.Property<string>("Street")
-                        .IsRequired();
-
-                    b.Property<string>("Zipcode")
-                        .IsRequired();
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("PersonId")
-                        .IsUnique();
-
-                    b.ToTable("Contacts");
-                });
-
             modelBuilder.Entity("SoccerRegistrationSystem.Models.Person", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("BirthDay");
+
+                    b.Property<string>("City")
+                        .IsRequired();
 
                     b.Property<string>("Discriminator")
                         .IsRequired();
@@ -65,6 +41,15 @@ namespace SoccerRegistrationSystem.Migrations
 
                     b.Property<string>("MiddleName")
                         .HasMaxLength(50);
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired();
+
+                    b.Property<string>("Street")
+                        .IsRequired();
+
+                    b.Property<string>("Zipcode")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -119,14 +104,6 @@ namespace SoccerRegistrationSystem.Migrations
                     b.ToTable("Volunteer");
 
                     b.HasDiscriminator().HasValue("Volunteer");
-                });
-
-            modelBuilder.Entity("SoccerRegistrationSystem.Models.Contact", b =>
-                {
-                    b.HasOne("SoccerRegistrationSystem.Models.Person")
-                        .WithOne("ContactInfo")
-                        .HasForeignKey("SoccerRegistrationSystem.Models.Contact", "PersonId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("SoccerRegistrationSystem.Models.Player", b =>

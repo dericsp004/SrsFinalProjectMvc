@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SoccerRegistrationSystem.Migrations
 {
-    public partial class contactUpdate3 : Migration
+    public partial class City : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

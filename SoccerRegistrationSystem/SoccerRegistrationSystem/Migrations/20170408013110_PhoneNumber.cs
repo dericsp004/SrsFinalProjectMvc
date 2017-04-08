@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SoccerRegistrationSystem.Migrations
 {
-    public partial class DatePicker : Migration
+    public partial class PhoneNumber : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
